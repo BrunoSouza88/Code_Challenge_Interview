@@ -1,0 +1,20 @@
+The translation of the text to English is:
+
+Create 3 routes: with Javascript and Express.js running on port 4000
+
+1 - Register an account and for this, an array accounts = [] with number, person’s name, and balance must be used 
+2 - Authenticate, in which a token will be returned 
+3 - Perform the debit between accounts, in which the source account, the destination account, and the money to be transferred must be informed in the body of the request, thus it must be debited from the source account and credited to the destination account.
+    To perform this operation, the user must have a token, that is, they must be authenticated.
+
+Validations:
+
+1 - If req.body is empty at the time of registration, send status 400 
+2 - If the user already exists in the accounts array at the time of registration, then send status 409 
+3 - when authenticating, the token must be saved within the accounts array, in a token = [] field. 
+4 - If there is no token in the headers with the name ‘authentication-headers’ at the time of transfer between accounts, then send status 401 
+5 - For all elements that successfully complete what is expected in their endpoint, send status 200 *There are other implicit validations that can be done
+
+Example of an object to be saved in accounts = []:
+
+const accounts = [ { number: 12345, balance: 1000, user: jorge}, { number: 54321, balance: 500, user: maria }, { number: 98765, balance: 2500, user: teresa }, ];
